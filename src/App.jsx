@@ -1,8 +1,7 @@
-import Accordion from './Accordion'
-import './App.css'
+import Accordion from './Accordion';
+import './App.css';
 
 function App() {
-
   return (
     <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px' }}>
       <h1>Single Open Accordion</h1>
@@ -29,7 +28,7 @@ function App() {
         </Accordion.Item>
       </Accordion>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

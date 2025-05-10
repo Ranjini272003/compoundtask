@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { AccordionContext } from './Accordion';
+import { useAccordionItem } from './AccordionItem';
 
-const AccordionHeader = ({ children, itemId }) => {
+const AccordionHeader = ({ children }) => {
     const { toggleItem, openItems } = useContext(AccordionContext);
+    const itemId = useAccordionItem();
     const isOpen = openItems.includes(itemId);
     const [isHover, setIsHover] = useState(false);
 
@@ -14,6 +16,8 @@ const AccordionHeader = ({ children, itemId }) => {
         border: '1px solid #ccc',
         transition: 'background-color 0.3s',
         userSelect: 'none',
+        display: 'flex'
+
     };
 
     return (
@@ -22,9 +26,10 @@ const AccordionHeader = ({ children, itemId }) => {
             onClick={() => toggleItem(itemId)}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
+
         >
-            {children}
-            <span style={{ float: 'right' }}>{isOpen ? '▲' : '▼'}</span>
+            <h3>{children}</h3>
+            <span style={{ display: 'flex', alignItems: 'center', marginLeft: '450px' }}>{isOpen ? '▲' : '▼'}</span>
         </div>
     );
 };

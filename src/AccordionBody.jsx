@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { AccordionContext } from './Accordion';
+import { useAccordionItem } from './AccordionItem';
 
-const AccordionBody = ({ children, itemId }) => {
+const AccordionBody = ({ children }) => {
     const { openItems } = useContext(AccordionContext);
+    const itemId = useAccordionItem();
     const isOpen = openItems.includes(itemId);
 
     const baseStyle = {

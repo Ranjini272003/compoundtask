@@ -12,7 +12,7 @@ const Accordion = ({ allowMultiple = false, children }) => {
         setOpenItems((prev) => {
             if (allowMultiple) {
                 return prev.includes(id)
-                    ? prev.filter(itemId => itemId !== id)
+                    ? prev.filter((itemId) => itemId !== id)
                     : [...prev, id];
             } else {
                 return prev.includes(id) ? [] : [id];
@@ -20,10 +20,8 @@ const Accordion = ({ allowMultiple = false, children }) => {
         });
     };
 
-    const contextValue = { openItems, toggleItem };
-
     return (
-        <AccordionContext.Provider value={contextValue}>
+        <AccordionContext.Provider value={{ openItems, toggleItem }}>
             {children}
         </AccordionContext.Provider>
     );

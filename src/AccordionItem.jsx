@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
+
+const ItemContext = createContext();
+
+export const useAccordionItem = () => useContext(ItemContext);
 
 const AccordionItem = ({ id, children }) => {
-    return React.Children.map(children, child =>
-        React.cloneElement(child, { itemId: id })
+    return (
+        <ItemContext.Provider value={id}>
+            {children}
+        </ItemContext.Provider>
     );
 };
 
