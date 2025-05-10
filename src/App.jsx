@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px' }}>
-      <h1>Single Open Accordion</h1>
+      <h1 style={{ textAlign: 'center' }}>Single Open Accordion</h1>
       <Accordion allowMultiple={false}>
         <Accordion.Item id="1">
           <Accordion.Header>Header 1</Accordion.Header>
@@ -16,7 +16,7 @@ function App() {
         </Accordion.Item>
       </Accordion>
 
-      <h1 style={{ marginTop: '40px' }}>Multiple Open Accordion</h1>
+      <h1 style={{ marginTop: '40px', textAlign: 'center' }}>Multiple Open Accordion</h1>
       <Accordion allowMultiple={true}>
         <Accordion.Item id="a">
           <Accordion.Header>Header A</Accordion.Header>
